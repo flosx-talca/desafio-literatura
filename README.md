@@ -1,7 +1,6 @@
 # Proyecto Challenge Literalura con Alura
 
-![libro2](https://github.com/user-attachments/assets/268e14d0-f393-43dc-93df-c52655061494)
-
+![libro2](https://github.com/user-attachments/assets/c6b29b9b-6500-4a43-ba46-9a7252558bd5)
 
 ## Descripcion del Proyecto
 
