@@ -19,15 +19,10 @@ public class Autor {
     private Integer fechaDefuncion;
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Libro> libro;
-    //private Libro libro;
-
-
 
     public Autor(){}
     public Autor(DatosAutor datosAutor){
         this.nombre = datosAutor.nombre();
-        //this.fechaNacimiento = Optional.of(datosAutor.fechaNacimiento()).orElse(0);
-        //this.fechaDefuncion = Optional.of(datosAutor.fechaDefuncion()).orElse(0);
         this.fechaNacimiento=datosAutor.fechaNacimiento();
         this.fechaDefuncion=datosAutor.fechaDefuncion();
     }
@@ -40,7 +35,6 @@ public class Autor {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -73,7 +67,7 @@ public class Autor {
     @Override
     public String toString() {
 
-        return "Nombre: "+ this.nombre +"\nAño Nac.: "+ this.fechaNacimiento+ "\nAño Falle.: "+ this.fechaDefuncion;
+        return "\nNombre: "+ this.nombre +"\nAño Nac.: "+ this.fechaNacimiento+ "\nAño Falle.: "+ this.fechaDefuncion+"";
     }
 
 

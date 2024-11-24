@@ -5,9 +5,7 @@ import com.aluracursos.literalura.repository.LibroRepository;
 import com.aluracursos.literalura.service.ConsumoApi;
 import com.aluracursos.literalura.service.ConvierteDatos;
 
-import javax.swing.text.Element;
 import java.util.*;
-import java.util.jar.JarOutputStream;
 
 public class Principal {
 
@@ -63,15 +61,10 @@ public class Principal {
 
    public void BuscarLibroPorTitulo(){
        String libroPorTeclado = solicitaLibroTeclado();
-       //System.out.println(libroPorTeclado);
        var json = consumoApi.obtenerDatos(URL_BASE+libroPorTeclado.replace(" ", "%20"));
-       //System.out.println(URL_BASE);
-       //System.out.println("Prueba de JSON: " + json);
        dataResultado = conversor.obtenerDatos(json, Resultado.class);
-       //String libroPorTeclado = "Great Expectation";
        Optional<DatosLibro> dLibro = dataResultado.libroresultado().stream()
                .filter(d -> d.titulo().toUpperCase().contains(libroPorTeclado.toUpperCase()))
-               //.filter(d -> d.titulo().equalsIgnoreCase(libroPorTeclado))
                .findFirst();
 
        if(dLibro.isPresent()) {
@@ -80,9 +73,7 @@ public class Principal {
            System.out.println("Libro Encontrado");
 
            if(libroBuscadoBD.isEmpty()){ //VACIO BD
-               //libro = dlibro.get();
                libro = new Libro(datosLibro);
-               //System.out.println(libro.getTitulo()+ libro.getAutor() +" MOSTRADOS");
                Optional<DatosAutor> dAutor = datosLibro.autor().stream().findFirst();
 
                if (dAutor.isPresent()) {
@@ -102,9 +93,6 @@ public class Principal {
                        libro.setAutor(autor);
                        libroRepository.save(libro);
                    }
-                 //  System.out.println("Autor existe " + dAutor);
-                   // List<Autor> listaAutor = Arrays.asList(autor);
-
                } else {
                    System.out.println("Autor no existe en la API");
                }
@@ -184,10 +172,7 @@ public class Principal {
     public void listarAutoresVivos(){
         String mensaje1 = "\nIngrese año, para ver si autor estaba vivo: ";
         String mensaje2 = "Año inválido";
-
-       // System.out.println("Ingrese año, para ver si autor estaba vivo");
         int anio = solicitaOpcionTeclado(mensaje1, mensaje2);
-        //anio =  Integer.parseInt(teclado.next());
         List<Autor> autoresVivos  = autorRepository.buscaAutorVivoanio(anio);
         if (autoresVivos.isEmpty()){
             System.out.println("No hay autores vivos en año especificado\n");
@@ -228,7 +213,6 @@ public class Principal {
                 break;
 
         }
-       // Libro idioma2 = libro;
         List<Libro> libroIdioma = libroRepository.buscaLibroPorIdioma(idioma);
         if(libroIdioma.isEmpty()){
             System.out.println("libros no encontrados");
@@ -240,8 +224,4 @@ public class Principal {
 
 
     }
-
-
-
-
 }

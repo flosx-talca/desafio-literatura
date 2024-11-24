@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface LibroRepository extends JpaRepository<Libro, Long> {
-    //@Query ("SELECT l FROM Libro l WHERE l.titulo = :titulo ORDER BY l.titulo asc LIMIT 1")
+
     Libro findByTitulo(String titulo);
 
     Libro findByIdioma(String idioma);

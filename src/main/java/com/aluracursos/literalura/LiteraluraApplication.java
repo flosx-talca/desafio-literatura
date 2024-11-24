@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LiteraluraApplication implements CommandLineRunner {
 
 	@Autowired //Injeccion de dependencias
-	//private SerieRepository repository;
 	private LibroRepository libroRepository;
 	@Autowired
 	private AutorRepository autorRepository;
