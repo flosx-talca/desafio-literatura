@@ -77,6 +77,7 @@ public class Principal {
        if(dLibro.isPresent()) {
            datosLibro = dLibro.get();
            Optional <Libro> libroBuscadoBD = Optional.ofNullable(libroRepository.findByTitulo(datosLibro.titulo()));
+           System.out.println("Libro Encontrado");
 
            if(libroBuscadoBD.isEmpty()){ //VACIO BD
                //libro = dlibro.get();
@@ -93,6 +94,7 @@ public class Principal {
                        autorRepository.save(autor);
                        libro.setAutor(autor);
                        libroRepository.save(libro);
+
                    }
                    else{
                        System.out.println("El Autor existe en la Base de Datos");
