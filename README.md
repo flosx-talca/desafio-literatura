@@ -5,7 +5,7 @@
 
 ## Descripcion del Proyecto
 
-Proyecto de Java  (v21) en Spring boot con API [GUTE](https://gutendex.com/)
+Proyecto de Java en Spring boot con API [GUTE](https://gutendex.com/)
 
 
 ## Caracteristicas Principales
@@ -19,3 +19,5 @@ Proyecto de Java  (v21) en Spring boot con API [GUTE](https://gutendex.com/)
 7. **Uso Postgres para gestionar todo acerca de la base de datos**
 8. **Uso de Records para facilitar la trasformación de datos a JSON**
 9. **Uso de Anotaciones para facilitar el desarrollo dentro del ecosistema Spring**
+
+(COMPILADO Y DESARROLALDO CON JDK 22).
