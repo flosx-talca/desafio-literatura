@@ -4,7 +4,7 @@
 
 ## Descripcion del Proyecto
 
-Proyecto de Java en Spring boot con API [GUTE](https://gutendex.com/)
+Proyecto de Java en Spring boot con API (https://gutendex.com/)
 
 
 ## Caracteristicas Principales
